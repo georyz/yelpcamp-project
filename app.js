@@ -1,6 +1,7 @@
 const express = require("express"),
 	  app = express(),
       port = 3000,
+	  cookieSession = require("cookie-session"),
       bodyParser = require("body-parser"),
       mongoose = require("mongoose"),
 	  flash = require("connect-flash"),
@@ -28,7 +29,7 @@ app.use(flash());
 // seedDB(); //seed the database
 
 // PASSPORT CONFIGURATION
-app.use(require("express-session")({
+app.use(require("cookie-session")({
     secret: "Once again Rusty wins cutest dog!",
     resave: false,
     saveUninitialized: false
